@@ -1,10 +1,11 @@
 import { Autoplay, Navigation, Pagination, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import "./swiperCom.scss";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
 
 type movies = {
   id: number;
@@ -15,7 +16,8 @@ type movies = {
   };
 };
 
-const SwiperCom: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
+const SwiperCom:React.FC<{moviesImg: movies[]}> = ({moviesImg}) => {
+
   return (
     <>
       <div id="swiperDiv">
@@ -33,15 +35,15 @@ const SwiperCom: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
           pagination={{ clickable: true }}
         >
           {moviesImg?.slice(1, 6).map((elImg) => (
-            <SwiperSlide key={elImg.id} className="">
+            <SwiperSlide key={elImg.id} className="swiperSlide">
               <div>
                 <div>
                   <p>Now Showing</p>
-                  <h3>{elImg.name}</h3>
-                  <button>Book Now</button>
+                <h3>{elImg.name}</h3>
+                <button>Book Now</button>
                 </div>
                 <div
-                  className=""
+                className="imgDev"
                   style={{ backgroundImage: `url(${elImg.image.original})` }}
                 ></div>
               </div>

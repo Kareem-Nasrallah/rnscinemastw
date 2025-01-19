@@ -1,0 +1,44 @@
+#footer {
+  border-top: #55555522 1px solid;
+  padding-top: 18px;
+  * {
+    color: #a02d8a;
+  }
+  div {
+    text-align: center;
+    margin: 2px 0;
+  }
+  a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: .9rem;
+    font-weight: 500;
+  }
+  span {
+    color: #000000aa;
+    font-size: 1.2rem;
+  }
+  #socialIc {
+    margin-bottom: 4px;
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 8px;
+      background: #a02d8a;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      i {
+        font-size: 1.3rem;
+        color: #fff;
+      }
+    }
+  }
+  .copyRghit {
+    margin-top: 6px;
+    color: #55555566;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}

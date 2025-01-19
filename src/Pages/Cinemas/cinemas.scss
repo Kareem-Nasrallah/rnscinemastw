@@ -1,0 +1,78 @@
+#cinemas {
+  padding: 10px;
+  margin: 30px auto 50px;
+  #buttonsList {
+    margin-bottom: 50px;
+    button {
+      background: #fff;
+      padding: 8px 15px;
+      margin: 0 2px;
+      border: #00000044 solid 1px;
+      text-transform: capitalize;
+      font-size: 0.9rem;
+      font-weight: 500;
+      @media (max-width: 576px) {
+        min-width: 90px;
+      }
+      &.activeBtn {
+        background: #a02d8a;
+        color: #fff;
+        border-color: transparent;
+      }
+    }
+  }
+  #cinemasList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cinemaDiv {
+      opacity: 0;
+      display: block;
+      margin: 4px 0;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 1px 0.5px #88888822;
+      transition: 0s !important;
+      &.apeare{
+        transition: opacity 1s !important;
+        opacity: 1;
+      }
+      div {
+        padding: 20px;
+        span,
+        p {
+          font-weight: 500;
+        }
+        span {
+          color: #00000077;
+          font-size: 0.8rem;
+        }
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 500;
+          margin: 10px 0;
+        }
+        p {
+          color: #00000088;
+          font-size: 0.9rem;
+        }
+      }
+      img {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

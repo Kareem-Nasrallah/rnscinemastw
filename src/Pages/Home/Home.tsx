@@ -22,12 +22,12 @@ function Home() {
     axiosFunc();
   }, []);
   return (
-    <div className="px-10">
+    <>
       <SwiperCom moviesImg={moviesImg}/>
       <Ad />
       <NowShowing moviesImg={moviesImg} title="Now Showing" areaStart={0} areaEnd={19} />
       <Cinemas/>
-    </div>
+    </>
   );
 }
 

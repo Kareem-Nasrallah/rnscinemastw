@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./header.scss";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -6,7 +7,6 @@ const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const location = useLocation();
 
-  // const linkStyle = {'p-1.5 transition-all ' + isHomeTheme? 'text-white hover:text-fuchsia-600':''}
   const isHomeTheme = location.pathname == "/";
 
   useEffect(() => {
@@ -21,14 +21,18 @@ const Header = () => {
   });
 
   return (
-    <header className={`py-2.5 ${isHomeTheme ? "absolute top-0 left-0 z-10 w-full backdrop:blur-sm backdrop:brightness-75" : ""}`}>
-      <div className={`${opeanMenu ? "container" : "container "} m-auto flex justify-between items-center`}>
+    <header className={isHomeTheme ? "HomeTheme" : ""}>
+      <div className={opeanMenu ? "container" : "container maxHight"}>
         <div id="logoMenu">
           <a href="#">
-            <img src={isHomeTheme?"./logo.png":'./logo_dark_top.png'} width='126px' className="py-2" />
+            {screenWidth > 576 ? (
+              <img src={isHomeTheme ? "./logo.png" : "./logo_dark_top.png"} />
+            ) : (
+              <img src={isHomeTheme ? "./logo_mobile.png" : "./ico.png"} />
+            )}
           </a>
           <i
-            className={`fa-solid ${opeanMenu ? "fa-xmark" : "fa-bars"} ${screenWidth < 994 ? '':'hidden'}`}
+            className={`fa-solid ${opeanMenu ? "fa-xmark" : "fa-bars"}`}
             onClick={() => {
               sitOpeanMenu((pre) => !pre);
             }}
@@ -36,27 +40,65 @@ const Header = () => {
         </div>
         <menu>
           <ul
-            className={`flex items-center justify-center gap-2.5 p-1 uppercase font-medium ${!opeanMenu && screenWidth < 994 ? "flex-col" : ""}`}
+            className={!opeanMenu && screenWidth < 994 ? "" : "translateMenu"}
           >
-            <li className="">
-              <Link to="/" className={`p-1.5 transition-all ${isHomeTheme? 'text-white hover:text-fuchsia-600':''}`}>now showing</Link>
+            <li>
+              <Link
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                to="/"
+              >
+                now showing
+              </Link>
             </li>
             <li>
-              <Link to="/cinemas"  className={`p-1.5 transition-all ${isHomeTheme? 'text-white hover:text-fuchsia-600':''}`}>cinemas</Link>
+              <Link
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                to="/cinemas"
+              >
+                cinemas
+              </Link>
             </li>
             <li>
-              <Link to="/coming-soon"  className={`p-1.5 transition-all ${isHomeTheme? 'text-white hover:text-fuchsia-600':''}`}>coming soon</Link>
+              <Link
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                to="/coming-soon"
+              >
+                coming soon
+              </Link>
             </li>
             <li>
-              <Link to="/contact"  className={`p-1.5 transition-all ${isHomeTheme? 'text-white hover:text-fuchsia-600':''}`}>contact</Link>
+              <Link
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                to="/contact"
+              >
+                contact
+              </Link>
             </li>
             <li>
-              <button className={`border py-2 w-36 text-sm uppercase rounded-md hover:bg-fuchsia-600 ${isHomeTheme ? "border-white" : "border-black"}`}>
+              <button
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                className={isHomeTheme ? "HomeTheme" : ""}
+              >
                 <i className="fa-regular fa-user"></i> {"  "} log in
               </button>
             </li>
             <li>
-              <button className={` ${isHomeTheme ? "" : ""}`}>
+              <button
+                onClick={() => {
+                  sitOpeanMenu(false);
+                }}
+                className={`arabic ${isHomeTheme ? "HomeTheme" : ""}`}
+              >
                 العربية
               </button>
             </li>

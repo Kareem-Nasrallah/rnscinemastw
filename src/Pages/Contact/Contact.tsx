@@ -1,3 +1,4 @@
+import "./contact.scss";
 import { useState } from "react";
 
 const Contact = () => {
@@ -8,6 +9,10 @@ const Contact = () => {
     phone: string;
     message: string;
     isHuman: boolean;
+    NameSchool: string;
+    NameCompanie: string;
+    NumberEmployees: string;
+    NumberStudents: string;
   }>({
     topicType: "",
     name: "",
@@ -15,11 +20,27 @@ const Contact = () => {
     phone: "",
     message: "",
     isHuman: false,
+    NameSchool: "",
+    NameCompanie: "",
+    NumberEmployees: "",
+    NumberStudents: "",
   });
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    setForm({
+      topicType: "",
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      isHuman: false,
+      NameSchool: "",
+      NameCompanie: "",
+      NumberEmployees: "",
+      NumberStudents: "",
+    });
+  };
 
   const isHumanHandler = () => {
     setForm((pre) => ({ ...form, isHuman: !pre.isHuman }));
@@ -36,7 +57,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className="container">
-      <div className="">
+      <div className="information">
         <h2>Contact information</h2>
         <div>
           <i className="fa-solid fa-location-dot"></i>{" "}
@@ -46,7 +67,7 @@ const Contact = () => {
           <i className="fa-regular fa-envelope"></i>{" "}
           <span>cinemas@arabiacpd.com</span>
         </div>
-        <div className="">
+        <div className="arabic">
           <p>
             للمساعدة في مشاكل الحجز الاون لاين برجاء الضغط علي رقم الهاتف التالي
             وارسال رساله علي رقم الواتس اب :
@@ -96,34 +117,41 @@ const Contact = () => {
               placeholder="Your Phone *"
             />
           </div>
-          {form.topicType == "Inquiries For Schools" ||
-          form.topicType == "Inquiries For Companies" ? (
+          {form.topicType == "Inquiries For Companies" && (
             <div>
               <input
                 type="text"
-                name="email"
-                value={form.email}
+                name="NameCompanie"
+                value={form.NameCompanie}
                 onChange={formHandler}
-                placeholder={
-                  form.topicType == "Inquiries For Schools"
-                    ? "Name of School (Optional)"
-                    : "Name of Companie (Optional)"
-                }
+                placeholder="NameCompanie"
               />
               <input
                 type="text"
-                name="phone"
-                value={form.phone}
+                name="NumberEmployees"
+                value={form.NumberEmployees}
                 onChange={formHandler}
-                placeholder={
-                  form.topicType == "Inquiries For Schools"
-                    ? "Number of Students (Optional)"
-                    : "Number of Employees (Optioal)"
-                }
+                placeholder="Number of Employees (Optioal)"
               />
             </div>
-          ) : (
-            ""
+          )}
+          {form.topicType == "Inquiries For Schools" && (
+            <div>
+              <input
+                type="text"
+                name="NameSchool"
+                value={form.NameSchool}
+                onChange={formHandler}
+                placeholder="Name of School (Optional)"
+              />
+              <input
+                type="text"
+                name="NumberStudents"
+                value={form.NumberStudents}
+                onChange={formHandler}
+                placeholder="Number of Students (Optional)"
+              />
+            </div>
           )}
           <textarea
             name="message"

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./cinemas.scss";
 import cinemasData from "./cinemasData.ts";
 
 const Cinemas = () => {
@@ -28,41 +29,41 @@ const Cinemas = () => {
 
   return (
     <div id="cinemas" className="container">
-      <h2 className="">Cinemas</h2>
+      <h2 className="sideTitle">Cinemas</h2>
       <div id="buttonsList">
         <button
-          className={`${activeBtn === "all" ? "" : ""}`}
+          className={`all ${activeBtn === "all" ? "activeBtn" : ""}`}
           onClick={() => handleBtnClick("all", cinemasData)}
         >
           All
         </button>
         <button
-          className={`${activeBtn === "cairo" ? "" : ""}`}
+          className={`cairo ${activeBtn === "cairo" ? "activeBtn" : ""}`}
           onClick={() => handleBtnClick("cairo", cairoCinemas)}
         >
           Cairo
         </button>
         <button
-          className={`${activeBtn === "giza" ? "" : ""}`}
+          className={`giza ${activeBtn === "giza" ? "activeBtn" : ""}`}
           onClick={() => handleBtnClick("giza", gizaCinemas)}
         >
           Giza
         </button>
         <button
-          className={` ${
-            activeBtn === "alexandria" ? "" : ""
+          className={`alexandria ${
+            activeBtn === "alexandria" ? "activeBtn" : ""
           }`}
           onClick={() => handleBtnClick("alexandria", alexCinemas)}
         >
           Alexandria
         </button>
       </div>
-      <div id="">
+      <div id="cinemasList">
         {city.map((cinema) => (
           <a
             href="#"
             key={cinema.id}
-            className={` ${cinema.city} ${apeare}`}
+            className={`cinemaDiv ${cinema.city} ${apeare}`}
           >
             <div>
               <span>{cinema.location}</span>

@@ -29,7 +29,7 @@ const Cinemas = () => {
   return (
     <div
       id="cinemas"
-      className="container mx-auto 2xl:px-32 xl:px-24 lg:px-16 md:px-8 sm:px-14 px-2.5"
+      className="container mx-auto mt-7 mb-12 2xl:px-32 xl:px-24 lg:px-16 md:px-8 sm:px-14 px-2.5"
     >
       <h2 className="text-5xl text-neutral-900 font-medium mt-8 mb-6">
         Cinemas
@@ -76,13 +76,13 @@ const Cinemas = () => {
           Alexandria
         </button>
       </div>
-      <div id="">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {city.map((cinema) => (
-          <a href="#" key={cinema.id} className={` ${cinema.city} ${apeare}`}>
-            <div>
-              <span>{cinema.location}</span>
-              <h3>{cinema.name}</h3>
-              <p>{cinema.categories.join(" - ")}</p>
+          <a href="#" key={cinema.id} className={`rounded-2xl shadow-lg overflow-hidden shadow-neutral-200  ${apeare}`}>
+            <div className="p-5 font-medium">
+              <span className="text-xs text-neutral-400">{cinema.location}</span>
+              <h3 className="my-2.5 text-xl">{cinema.name}</h3>
+              <p className="text-sm text-neutral-500">{cinema.categories.join(" - ")}</p>
             </div>
             <img src="cinemaCuted.jpg" />
           </a>

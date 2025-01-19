@@ -18,31 +18,38 @@ type movies = {
 const SwiperCom: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
   return (
     <>
-      <div id="swiperDiv">
+      <div id="swiperDiv" style={{ height: "75vh" }} className="bg-fuchsia-400">
         <Swiper
           id="swiper"
           modules={[Autoplay, Navigation, Pagination, A11y]}
           spaceBetween={20}
           centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: false,
+          // }}
           loop={true}
           navigation
           pagination={{ clickable: true }}
+          className="h-full"
         >
           {moviesImg?.slice(1, 6).map((elImg) => (
             <SwiperSlide key={elImg.id} className="">
-              <div>
-                <div>
-                  <p>Now Showing</p>
-                  <h3>{elImg.name}</h3>
-                  <button>Book Now</button>
+              <div className="h-full">
+                <div className="absolute top-1/2 right-3/4 -translate-x-40 w-full">
+                  <p className="text-sm text-white">Now Showing</p>
+                  <h3 className="my-4 text-5xl font-bold text-white drop-shadow-md">
+                    {elImg.name}
+                  </h3>
+                  <button className="font-semibold text-white">Book Now</button>
                 </div>
                 <div
-                  className=""
-                  style={{ backgroundImage: `url(${elImg.image.original})` }}
+                  className="h-full mx-auto bg-cover max-w-screen-lg"
+                  style={{
+                    backgroundImage: `url(${elImg.image.original})`,
+                    width: "70vw",
+                    minWidth: "500px",
+                  }}
                 ></div>
               </div>
             </SwiperSlide>

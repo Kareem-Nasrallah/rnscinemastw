@@ -23,7 +23,7 @@ const NowShowing: React.FC<{
   return (
     <div id="nowShowing" className="container mx-auto 2xl:px-32 xl:px-24 lg:px-16 md:px-8 sm:px-14 px-2.5">
       <h2 className="text-5xl text-neutral-900 font-medium mt-8 mb-6">{title}</h2>
-      <div id="showingMovies" className="grid grid-cols-2 gap-5 justify-start items-center md:grid-cols-3 xl:grid-cols-4">
+      <div id="showingMovies" className="grid grid-cols-2 gap-5 mb-12 justify-start items-center md:grid-cols-3 xl:grid-cols-4">
         {moviesImg.slice(areaStart, areaEnd).map((movie) => (
           <a key={movie.id} href="#" title={movie.name} className="rounded-md mb-2.5 shadow-lg shadow-neutral-200">
             {isComingSoon && <div className="">{movie.premiered}</div>}

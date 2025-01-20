@@ -24,10 +24,10 @@ const SwiperCom: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
           modules={[Autoplay, Navigation, Pagination, A11y]}
           spaceBetween={20}
           centeredSlides={true}
-          // autoplay={{
-          //   delay: 2500,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           loop={true}
           navigation
           pagination={{ clickable: true }}
@@ -36,12 +36,14 @@ const SwiperCom: React.FC<{ moviesImg: movies[] }> = ({ moviesImg }) => {
           {moviesImg?.slice(1, 6).map((elImg) => (
             <SwiperSlide key={elImg.id} className="">
               <div className="h-full">
-                <div className="absolute top-1/2 right-3/4 -translate-x-40 w-full">
+                <div className="absolute top-1/2 right-3/4 -translate-x-44 translate-y-4 w-full">
                   <p className="text-sm text-white">Now Showing</p>
-                  <h3 className="my-4 text-5xl font-bold text-white drop-shadow-md">
+                  <h3
+                  style={{textShadow:'0 2px #c026d3'}}
+                   className="my-4 text-5xl font-bold text-white drop-shadow-md">
                     {elImg.name}
                   </h3>
-                  <button className="font-semibold text-white">Book Now</button>
+                  <button className="font-semibold text-white py-2.5 px-16 text-base mt-2 rounded-md bg-fuchsia-600">Book Now</button>
                 </div>
                 <div
                   className="h-full mx-auto bg-cover max-w-screen-lg"

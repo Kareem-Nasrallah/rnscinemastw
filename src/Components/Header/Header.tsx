@@ -34,7 +34,7 @@ const Header = () => {
       <div
         className={`${
           opeanMenu ? "container" : "container "
-        } h-16 mx-auto flex justify-between items-center 2xl:px-32 xl:px-24 lg:px-16 md:px-8 sm:px-14 px-2.5`}
+        } h-16 mx-auto flex justify-between items-center 2xl:px-32 xl:px-24 lg:px-8 md:px-8 sm:px-14 px-2.5`}
       >
         <div id="logoMenu">
           <a href="#">
@@ -46,7 +46,7 @@ const Header = () => {
           </a>
           <i
             className={`fa-solid ${opeanMenu ? "fa-xmark" : "fa-bars"} ${
-              screenWidth < 994 ? "" : "hidden"
+              screenWidth < 1024 ? "" : "hidden"
             }`}
             onClick={() => {
               sitOpeanMenu((pre) => !pre);
@@ -56,7 +56,7 @@ const Header = () => {
         <menu>
           <ul
             className={`flex items-center justify-center gap-2.5 p-1 uppercase font-medium ${
-              !opeanMenu && screenWidth < 994 ? "flex-col" : ""
+              !opeanMenu && screenWidth < 1024 ? "flex-col" : ""
             }`}
           >
             <li>
@@ -83,7 +83,7 @@ const Header = () => {
               <button
                 className={`border font-medium py-1.5 text-sm uppercase rounded-md hover:bg-fuchsia-600 ${
                   isHomeTheme ? "border-white text-white" : "border-black"
-                } ${screenWidth < 1024? 'w-24':'w-36'}`}
+                } ${screenWidth < 1024 ? "w-24" : "w-36"}`}
               >
                 <i
                   className={`fa-regular fa-user ${
@@ -95,9 +95,12 @@ const Header = () => {
             </li>
             <li>
               <button
-                className={`arabic  font-medium border py-1.5 text-sm uppercase rounded-md hover:bg-fuchsia-600 ${
+                className={`font-medium border py-1.5 text-sm uppercase rounded-md hover:bg-fuchsia-600 ${
                   isHomeTheme ? "border-white text-white" : "border-black"
-                } ${screenWidth < 1024? 'w-24':'w-36'}`}
+                } ${screenWidth < 1024 ? "w-24" : "w-36"}`}
+                style={{
+                  fontFamily: '"IBM Plex Sans Arabic", serif',
+                }}
               >
                 العربية
               </button>

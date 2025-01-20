@@ -9,9 +9,6 @@
     font-size: 95% !important;
   }
 }
-.arabic{
-  font-family: "IBM Plex Sans Arabic", serif
-}
 
 @tailwind base;
 @tailwind components;

@@ -25,8 +25,8 @@ const NowShowing: React.FC<{
       <h2 className="text-5xl text-neutral-900 font-medium my-4">{title}</h2>
       <div id="showingMovies" className="grid grid-cols-2 gap-5 mb-12 justify-start items-center md:grid-cols-3 xl:grid-cols-4">
         {moviesImg.slice(areaStart, areaEnd).map((movie) => (
-          <a key={movie.id} href="#" title={movie.name} className="rounded-md mb-2.5 shadow-lg shadow-neutral-200 transition-all hover:bg-blue-50">
-            {isComingSoon && <div className="">{movie.premiered}</div>}
+          <a key={movie.id} href="#" title={movie.name} className="rounded-md mb-2.5 shadow-lg shadow-neutral-200 relative transition-all hover:bg-blue-50">
+            {isComingSoon && <div className="absolute bg-fuchsia-700 text-white top-8 right-5 p-2.5 font-medium rounded-md">{movie.premiered}</div>}
             <img src={movie.image.medium} alt={movie.name} className="w-full rounded-md" />
             <div className="px-2.5">
               <h3 className="text-lg my-2.5">{movie.name}</h3>

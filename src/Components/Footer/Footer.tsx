@@ -1,5 +1,5 @@
 const Footer = () => {
-  const divStyle = "my-1 flex justify-center items-center";
+  const divStyle = "my-0.5 flex justify-center items-center";
   const iconsLinkStyle =
     "h-9 w-9 m-2 rounded-md bg-fuchsia-700 inline-flex justify-center items-center no-underline";
   const anchorStyle = "text-fuchsia-700 font-medium no-underline mx-2 text-sm"
@@ -30,7 +30,7 @@ const Footer = () => {
         <span className="text-neutral-600 text-xl"> • </span>
         <a href="#" className={anchorStyle}>Terms of Service</a>
       </div>
-      <div className={`${divStyle} text-neutral-400 text-xs mb-0.5 mt-1.5`}>© 2025 All Rights Reserved By Renaissance Cinemas</div>
+      <div className={`${divStyle} text-neutral-400 text-xs mb-0.5 mt-1`}>© 2025 All Rights Reserved By Renaissance Cinemas</div>
     </div>
   );
 };

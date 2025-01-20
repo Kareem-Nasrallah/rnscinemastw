@@ -2,9 +2,10 @@
 
 * {
   font-family: "Ubuntu", serif;
-  color: #151515
+  color: #151515;
+  box-sizing: border-box;
 }
-@media (max-width:1200px) {
+@media (max-width:1279px) {
   html{
     font-size: 95% !important;
   }
